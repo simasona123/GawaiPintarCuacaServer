@@ -1,0 +1,139 @@
+@import 'base.scss';
+//navbar
+
+//Map
+#mapDiv {
+    height: 100%;
+    width: 100%;
+    border-top-style: solid;
+    border-color: #636363;
+    border-width: 1px;
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    background: #232323;
+    padding: 10px;
+    align-items: flex-start;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 10px;
+    color: $fontColor;
+
+    .legend-item {
+        margin: 5px;
+    }
+}
+
+.legend img {
+    width: 30px;
+}
+
+//dataStatistik
+.dataStatistik {
+    background: $background2;
+}
+
+//subtitle
+.subtitle {
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 10px;
+    padding-top: 10px;
+
+    h2 {
+        font-weight: bold;
+        padding-left: 10px;
+    }
+}
+
+//Jumlah dan Status Sistem
+.jumlah {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    justify-content: space-around;
+    text-align: center;
+    align-items: baseline;
+    margin-bottom: 30px;
+
+    .subjumlah {
+        background: $background3;
+        padding: 10px;
+        border-radius: 10px;
+        width: 25%;
+        position: relative;
+        border-color: #636363;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5%;
+    }
+
+    h2 {
+        font-weight: bold;
+        color: $fontColor1;
+    }
+
+    .statusImg {
+        width: 30px;
+        padding-bottom: 10px;
+    }
+}
+
+//chart
+.containerGraph {
+    margin-top: 10px;
+
+    .col {
+        background: $background3;
+        margin: 10px;
+        border-color: #636363;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5%;
+    }
+
+    h3 {
+        margin-left: 10px;
+        padding-top: 10px;
+    }
+
+    .graphItem1 {
+        margin-top: 20px;
+        width: 70%;
+    }
+
+    .graphItem2 {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+//Last Chart
+.lastGraph {
+    background: $background3;
+    margin-top: 10px;
+    border-color: #636363;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3%;
+
+}
+
+
+//popup map
+.leaflet-popup-content-wrapper {
+    background: $background3;
+    color: $fontColor1;
+
+    table {
+        color: $fontColor1;
+    }
+}
+
+/*# sourceMappingURL=base.css.map */

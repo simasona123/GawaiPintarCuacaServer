@@ -1,0 +1,69 @@
+{% extends 'webServer/base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'webServer/css/download.css' %}">
+    <script>
+        var form = "{{ form|escapejs }}";
+    </script>
+{% endblock head %}
+{% block body %}
+    <div class="container section1">
+    <h1>Download Data</h1>
+        <div class='subsection'>
+            <p>Fitur download data ini terbatas hanya pada dua pilihan. Pilihan pertama, data berdasarkan user android dan pilihan kedua, data 
+                berdasarkan timestamp pada sistem.
+            </p>
+        </div>    
+        <div class='subsection'>
+            <h3>Deskripsi Data</h3>
+            <p>Data yang didownload akan berformat CSV (Comma Separated Value). Untuk informasi lebih lanjut mengenai CSV 
+            <a href="https://en.wikipedia.org/wiki/Comma-separated_values">Wikipedia</a>. 
+        </p>
+        </div>
+        <div class="subsection">
+            <h3>Output Data</h3>
+            <ul style="padding-left:40px;">
+                <li>timestamp</li>
+                <li>latitude</li>
+                <li>longitude</li>
+                <li>altitude</li>
+                <li>altitude1</li>
+                <li>suhu_udara</li>
+                <li>suhu_baterai</li>
+                <li>kelembaban_udara</li>
+                <li>tekanan_udara</li>
+                <li>suhu_cpu</li>
+                <li>status_layar</li>
+                <li>status_charging</li>
+                <li>suhu_udara1</li>
+                <li>kelembaban_udara1</li>
+                <li>tekanan_udara1</li>
+            </ul>
+            <p>Untuk informasi dan permintaan lebih lanjut, dapat menghubungi kami di 
+            <a href="gawaipintarcuaca@gmail.com">GPC</a></p>
+        </div>
+        <div class="form">
+            <label for="option">Pilih Download Data</label>
+            <select name="optionDownload" id="pilihan">
+                <option value="1">Berdasarkan Android User</option>
+                <option value="2">Berdasarkan Data Terakhir</option>
+            </select>
+            <button type='button' class='btn btn-dark pilih' onclick='pilihan()'>Pilih</button>
+        </div>
+        <form action="" method="POST">
+        {% csrf_token %}
+            <div class="formItem">
+            
+            </div>
+            <input id='submit' type="submit" class="btn btn-dark pilih" value='Download' style="display:none;"> 
+        </form>
+        <a id='download1' href="{% url 'download1' %}" style="display:none;"><button class="btn btn-dark pilih">Download</button></a>
+    </div>
+    {% if form.errors %}
+        <div class="alert alert-danger container">
+            <strong>{{ form.errors|escape }}</strong>
+        </div>
+    {% endif %}
+<script src="{% static 'webServer/js/download.js' %}"></script>
+{% endblock body %}
+

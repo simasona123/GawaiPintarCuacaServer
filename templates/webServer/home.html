@@ -1,0 +1,70 @@
+{% extends 'webServer/base.html' %}
+{% load static %}
+{% block head %}
+    <link async rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link async href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <script src={% static 'webServer/js/bundle.js' %}></script>
+    <link async rel="stylesheet" href="{% static 'webServer/css/home.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
+    <title>GPC</title>
+    <script type="text/javascript">
+        var dataResponse = {{data|safe}};
+        var dataResponseMatang = {{data_matang|safe}};
+        console.log(dataResponse);
+        console.log(dataResponseMatang);
+        var imageUrl = "{% static 'webServer/img' %}";
+        const twoDays = 1000 * 60 * 60 * 24 * 2;
+        const fiveDays = 1000 * 60 * 60 * 24 * 5;
+        const xAxis = {{ x_axis|safe }};
+        const yAxis = {{ y_axis|safe }};
+        const OverlappingMarkerSpiderfier = window.OverlappingMarkerSpiderfier;
+    </script>
+{% endblock head %}
+
+{% block body %}
+<div id="mapDiv" class=''></div>
+<div class="container dataStatistik">
+    <div class="subtitle">
+        <h2>Data Statistik</h2>
+        <h5 class='now'>Jam</h5>
+    </div>
+    <div class="jumlah container">
+        <div class="subjumlah">
+            <h2>{{ jumlah_user }}</h2>
+            <h5><img class="img" style='width:30px;' src={% static 'webServer/img/smartphone.svg' %} alt="">Pengguna Android</h5>
+        </div>
+        <div class="subjumlah">
+            <h2>{{ jumlah_data }}</h2>
+            <h5><img class="img" style='width: 30px; padding-right: 8px;' src={% static 'webServer/img/file-storage.svg' %} alt="">Total Data Mentah</h5></div>
+        <div class="subjumlah statusSistem">
+            <img class='statusImg' src={% static 'webServer/img/checkGreen.svg' %} alt="Icons made by Freepik">
+            <h5>Status Sistem</h5>
+        </div>
+    </div>
+    <div class="containerGraph container">
+        <div class="row">
+        <div class="col">
+            <h3>Android User</h3>
+            <div class="graphItem1 container"><canvas id="userCount" aria-label="Hello ARIA World" role="img"></canvas></div>
+        </div>
+        <div class="col">
+            <h3>Users's Sensor</h3>
+            <div class="graphItem2 container"><canvas id="userComparison" aria-label="Hello ARIA World" role="img"></canvas></div>
+        </div>
+        </div>
+    </div>
+    <div class="container lastGraph">
+        <h3 style='padding: 10px; padding-left:20px;'>Grafik Jumlah Data Terhadap Waktu</h3>
+        <div class="graphItem3 container"><canvas id="lineChart" aria-label="Hello ARIA World" role="img"></canvas></div>
+    </div>        
+</div>
+<script async src={% static 'webServer/js/home.js' %}></script>
+<script async src={% static 'webServer/js/home1.js' %}></script>
+{% endblock body %}
+

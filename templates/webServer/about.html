@@ -1,0 +1,38 @@
+{% extends 'webServer/base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'webServer/css/about.css' %}">
+{% endblock head %}
+{% block body %}
+    <h1>About Us-GPC</h1>
+    <div class="container first">
+        <p class="section"> Smartphone telah mengalami perkembangan yang sangat pesat hingga saat ini. Kemampuan komputasi yang semakin baik serta fitur-fitur canggih (GPS, kamera, dll)
+            yang ada menjadikan smartphone sebagai alat penting yang tidak dapat dipisahkan dari manusia. Bahkan tidak melebih-lebihkan jika smartphone menjadi salah satu
+            kebutuhan pokok baru untuk manusia modern saat ini. 
+        </p> 
+        <p class="section"> Akan tetapi, manfaat smartphone tidak sebatas untuk memenuhi kebutuhan masing-masing individu, seperti media sosial, komunikasi, mengabadikan momen dengan 
+            kamera, bermain game, dll. Pemanfaatan yang lebih dalam dapat menjadikan smartphone sebagai sumber data yang dapat dimanfaatkan untuk tujuan bersama masyarakat, 
+            salah satu contohnya adalah Google Maps. Google maps mampu menggambarkan kepadatan lalu lintas dari suatu wilayah dikarenakan Google menerima 
+            data yang didapatkan dari setiap smartphone di wilayah tersebut yang kemudian mengolahnya dan mengirimkan kepada pengguna smartphone yang membutuhkan.
+        </p>
+        <p class="section"> GPC (Gawai Pintar Cuaca) adalah suatu sistem yang bertujuan mengumpulkan data parameter cuaca dari banyak smartphone yang kemudian diolah, 
+            dan diharapkan data yang terkumpul dapat dimanfaatkan untuk meningkatkan resolusi spasial data cuaca di Indonesia. Kami mengerti penilitian ini masih jauh dari kata baik, namun 
+            kami berharap penelitian ini dapat terus berkembang dan terutama dapat bermanfaat bagi masyarakat.
+        </p>
+    </div>
+    <div class="container second">
+        <h2>Apilkasi</h2>
+        <p style="text-align:center; text-transform: capitalize;">
+            Kami berharap anda dapat membantu dan mendukung penelitian ini dengan mendownload aplikasi berikut </p>
+        <div class="section apps">
+            <div class="appsItem">
+                <img src="{% static 'webServer/img/playstore.svg' %}" style="width: 50px; padding-top: 10px;" alt="">
+            </div>
+            <div class="appsItem">
+                <h5>GPC (Gawai Pintar Cuaca)</h5>
+                <p style='margin:3px;'>Aplikasi pengumpul data sensor pada android</p>
+                <a href="https://drive.google.com/drive/folders/1S_C9KBU5pBAkGgxkK6XLxKwwEghwGk-i?usp=sharing"><button type="button" class="btn btn-primary">Download dan Panduan</button></a>
+            </div>
+        </div> 
+    </div>
+{% endblock body %}

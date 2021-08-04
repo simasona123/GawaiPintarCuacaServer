@@ -1,0 +1,64 @@
+@import 'base.scss';
+
+a {
+    text-decoration: none;
+}
+
+.section1 {
+    margin-top: 10px;
+    border-color: #636363;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    background: $background2;
+}
+
+h1,
+h3 {
+    font-weight: bold;
+}
+
+h3 {
+    text-indent: 20px;
+}
+
+.subsection {
+    margin-top: 25px;
+
+    p {
+        font-size: 1.1rem;
+        text-indent: 20px;
+        text-align: justify;
+        margin-top: 10px;
+    }
+}
+
+
+select,
+option {
+    background: $background3;
+    color: $fontColor;
+    margin: 10px;
+}
+
+.pilih {
+    background: $background4;
+    border-radius: 10px;
+    margin: 10px;
+
+    &:hover {
+        background: $background3;
+    }
+}
+
+form {
+    .formItem {
+        position: relative;
+        left: 20px;
+    }
+
+    input {
+        position: relative;
+        left: 10px;
+    }
+}
